@@ -1,0 +1,207 @@
+:root{
+    --main-color: #af4528;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+body{
+    background-image: url("../img/bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    color: rgb(46, 44, 44);
+}
+
+.tarefas{
+    color: var(--main-color);
+    font-family: "Roboto", sans-serif;;
+    font-style: normal;
+}
+
+
+button{
+    background-color: #fdfdfd;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s; 
+}
+
+button:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+button:hover > i{
+    color: #fff;
+}
+
+button i{
+    font-weight: bold;
+    pointer-events: none;
+}
+
+input,select{
+    padding: .25rem .5rem;
+}
+
+.hide{
+    display: none;
+}
+
+.todo-container{
+    max-width: 850px;
+    margin: 3rem auto;
+    background-color: #e2dbdbf3;
+    padding: 1.5rem;
+    border-radius: 15px;
+    height: 700px;
+}
+#formulario-todo .form-control input{
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+#lista-todo{
+    overflow-y: scroll;
+    max-height: 430px;
+}
+
+#lista-todo::-webkit-scrollbar{
+    width: 0;
+}
+
+.todo-container header{
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#formulario-todo, 
+#formulario-edicao{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#formulario-todo p,
+#formulario-edicao p{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control{
+    display: flex;
+}
+
+
+.form-control input{
+    margin-right: 0.3rem;
+    outline: none;
+}
+
+#botao-cancelar-edicao{
+    margin-top: 1rem;
+}
+
+#buscar-filtrar-todos{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+}
+
+#search input, select{
+    outline: none;
+}
+
+#buscar-filtrar-todos h4{
+    margin-bottom: 0.5rem;
+}
+
+#buscar{
+    border-right: 1px solid #ccc;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#buscar form{
+    display: flex;
+}
+
+#buscar input{
+    width: 100%;
+    margin-right: 0.3rem;
+}
+
+#filtrar{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+#filtrar select{
+    flex: 1;
+}
+
+.todo{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    align-items: center;
+    border-bottom: 1px solid #DDD;
+    transition: 0.3s;
+}
+
+.todo h3{
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.todo button{
+    margin-left: .3rem;
+}
+
+.done{
+    background-color: #e67657;
+}
+
+.done h3{
+    text-decoration: line-through;
+    color: #fff;
+    font-style: italic;
+}
+
+@media (max-width: 700px){
+    .todo-container{
+        max-width: 350px;
+        padding: 1rem 0.5rem 0.5rem;
+    }
+
+    #buscar{
+        width: 75%;
+    }
+
+    #filtrar{
+        width: 25%;
+    }
+}

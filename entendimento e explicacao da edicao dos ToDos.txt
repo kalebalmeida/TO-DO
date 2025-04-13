@@ -1,0 +1,76 @@
+1 -
+document.addEventListener(("click"), (e)=>{
+    	const targetEl = e.target;
+    	const elementoPai = targetEl.closest("div");
+    	let todoTitle;
+
+    
+    	if(elementoPai && elementoPai.querySelector("h3")){
+        	todoTitle = elementoPai.querySelector("h3").innerText;
+    	}
+}
+
+o todoTitle serviu pra ele pegar o título atual;
+
+
+
+
+
+
+
+2 - 
+   if(targetEl.classList.contains("edit-todo")){
+    	alternateForms();
+    	editInput.value = todoTitle
+    	oldInputValue = todoTitle
+}
+
+isso serviu para colocar o título atual no input de edição, e serviu
+para guardar esse título atual na variável oldInputValue;
+
+
+
+
+
+
+
+3 - editForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+
+    const editInputValue = editInput.value
+
+    if(editInputValue){
+        updateTodo(editInputValue)
+    }
+    alternateForms()
+})
+
+
+o editInputValue é o novo valor editado, o if checa se o novo valor não está vazio, e chama uma função que passa como 
+parâmetro o novo valor editado, depois, com o alternateForms() volta para a tela inicial onde mostra os ToDo.
+
+
+
+
+
+
+
+
+
+4 - const updateTodo = (texto)=>{
+    const allTodos = document.querySelectorAll(".todo")
+
+    allTodos.forEach((todo) =>{
+        let todoTitle = todo.querySelector("h3")
+
+        if(todoTitle.innerText === oldInputValue){
+            todoTitle.innerText = texto
+        }
+    })
+}
+
+
+primeiro percorre todos os ToDo's, cria uma variável todoTitle que pega o texto que está no ToDo que está sendo testado pelo forEach no 
+momento, compara se o texto do ToDo que está sendo testado no momento é o mesmo que o texto guardado na 
+variável oldInputValue(que foi pego de acordo com o ToDo (elemento pai) que foi clicado), atribuiu o texto recebido como parâmetro para a variável FINAL, que é a todoTitle.
+
