@@ -148,6 +148,9 @@ document.addEventListener(("click"), (e)=>{
     if(elementoClicado.classList.contains("finish-todo")){
         elementoPai.classList.toggle("done");
         atualizarStatusNaLocalStorage(todoTitle);
+
+        elementoPai.remove();
+        saveTodo(todoTitle, elementoPai.classList.contains("done"), 0);
     }
     if(elementoClicado.classList.contains("remove-todo")){
         elementoPai.remove();
