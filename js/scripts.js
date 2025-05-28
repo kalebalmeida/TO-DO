@@ -53,7 +53,18 @@ const saveTodo = (text, done=0, save=1) =>{
         saveTodoLocalStorage({text, done})
     }
 
-    todoList.appendChild(todo)
+    if (done){
+        todoList.appendChild(todo)
+    }
+    else{
+        const primeiroDone = Array.from(todoList.children).find(el => el.classList.contains("done"));
+        if(primeiroDone){
+            todoList.insertBefore(todo,primeiroDone);
+        }
+        else{
+            todoList.appendChild(todo);
+        }
+    }
 
     todoInput.value = "";
     todoInput.focus();
